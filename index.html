@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wawgant Toubkal Trail 2026 | Imlil, Morocco</title>
+  <meta name="description" content="Join the Wawgant Toubkal Trail 2026, an international mountain running event in the High Atlas Mountains of Morocco.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* CSS Variables for consistent theming */
+    :root{
+      --primary-dark: #1a3c40;
+      --primary-medium: #2d5d5f;
+      --primary-light: #4a8c8a;
+      --accent: #d4af37;
+      --accent-light: #e8c96a;
+      --earth-sand: #e6d2aa;
+      --earth-green: #5a7d5a;
+      --text-dark: #333;
+      --text-light: #fff;
+      --gray-light: #f5f5f5;
+      --gray-medium: #e0e0e0;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+      --transition: all 0.3s ease;
+      --header-height: 85px; /* Increased for larger logo */
+    }
+
+    /* Base */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Montserrat',sans-serif;
+      color:var(--text-dark);
+      background:#fff;
+      padding-top: var(--header-height);
+      overflow-x: hidden;
+    }
+    .container{width:90%;max-width:1200px;margin:0 auto;padding:0 15px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    h1,h2,h3{line-height:1.2;margin-bottom:1rem;font-weight:600}
+    h1{font-size:2.5rem}
+    h2{font-size:2rem;color:var(--primary-dark)}
+    p{margin-bottom:1rem;line-height:1.6}
+
+    /* Buttons */
+    .btn{
+      display:inline-block;
+      background-color:var(--accent);
+      color:var(--text-dark);
+      padding:12px 24px;
+      border-radius:6px;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+      transition:var(--transition);
+      text-align: center;
+    }
+    .btn:hover{
+      background:var(--accent-light);
+      transform:translateY(-3px);
+      box-shadow:var(--shadow-lg);
+    }
+    .btn-secondary{
+      background:transparent;
+      border:2px solid var(--accent);
+      color:var(--text-dark);
+    }
+    .btn-secondary:hover{
+      background:var(--accent);
+    }
+
+    /* Header */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:var(--header-height);
+      background:rgba(255,255,255,0.98);
+      box-shadow:var(--shadow);
+      z-index:1200;
+      backdrop-filter: blur(4px);
+    }
+    .navbar{
+      height:100%;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      justify-content:space-between;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-shrink:0;
+    }
+    /* Larger logo */
+    .logo img{
+      height:70px; /* Increased from 64px */
+      width:auto;
+      max-height:70px;
+      object-fit:contain;
+      display:block;
+    }
+
+    /* Nav */
+    .nav-links{
+      display:flex;
+      list-style:none;
+      gap:1.6rem;
+      margin-left:auto;
+      align-items:center;
+    }
+    .nav-links li a{
+      font-weight:500;
+      transition:var(--transition);
+      position: relative;
+    }
+    .nav-links li a:hover{
+      color:var(--accent);
+    }
+    .nav-links li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+    /* hamburger */
+    .hamburger{
+      display:none;
+      cursor:pointer;
+      width:44px;
+      height:34px;
+      align-items:center;
+      justify-content:center;
+      flex-direction: column;
+    }
+    .hamburger span{
+      display:block;
+      height:3px;
+      background:#333;
+      width:26px;
+      margin:3px 0;
+      border-radius:3px;
+      transition:var(--transition);
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Hero */
+    .hero{
+      min-height: calc(100vh - var(--header-height));
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--text-light);
+      text-align:center;
+      padding:40px 15px;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+      position: relative;
+    }
+    .hero h1{
+      font-size:3.5rem;
+      margin-bottom:0.6rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero p{
+      font-size:1.2rem;
+      margin-bottom:1.5rem;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(transparent, var(--gray-light));
+    }
+
+    /* Sections */
+    section{
+      padding:80px 0;
+      position: relative;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:3rem;
+    }
+    .section-title h2{
+      display:inline-block;
+      position:relative;
+      font-size: 2.2rem;
+    }
+    .section-title h2::after{
+      content:'';
+      position:absolute;
+      bottom:-10px;
+      left:50%;
+      transform:translateX(-50%);
+      width:80px;
+      height:3px;
+      background:var(--accent);
+    }
+
+    /* Introduction */
+    .introduction {
+      background-color: var(--gray-light);
+    }
+
+    /* Highlights */
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .highlight-card{
+      background:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      position: relative;
+    }
+    .highlight-card:hover{
+      transform:translateY(-10px);
+      box-shadow:var(--shadow-lg);
+    }
+    .highlight-img{
+      height:220px;
+      background-size:cover;
+      background-position:center;
+    }
+    .highlight-content{
+      padding:1.8rem;
+    }
+
+    /* About */
+    .about-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3rem;
+      align-items:center;
+    }
+    .about-img img{
+      border-radius:12px;
+      box-shadow:var(--shadow-lg);
+      transition: var(--transition);
+    }
+    .about-img img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Race Details */
+    .race-details-container {
+      margin-top: 2rem;
+    }
+    
+    .race-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: var(--gray-light);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+    
+    .race-tab {
+      padding: 14px 28px;
+      background: var(--gray-light);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+      text-align: center;
+      flex: 1;
+      min-width: 150px;
+      border: 2px solid transparent;
+    }
+    
+    .race-tab.active {
+      background: var(--accent);
+      color: var(--text-dark);
+      border-color: var(--accent-light);
+    }
+    
+    .race-tab:hover:not(.active) {
+      background: var(--gray-medium);
+      transform: translateY(-3px);
+    }
+    
+    .race-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .race-content.active {
+      display: block;
+    }
+    
+    .race-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .race-info {
+      padding: 2rem;
+      background: var(--gray-light);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    
+    .race-info h3 {
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .race-info ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    
+    .race-info li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    
+    .race-info li:before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    
+    .race-map {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+    .race-map:hover {
+      transform: scale(1.02);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Registration preview */
+    .bank-info{
+      background:#fff;
+      padding:2rem;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      max-width:700px;
+      margin:2rem auto;
+      text-align:left;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Eco */
+    .eco-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .eco-item{
+      text-align:center;
+      padding:2rem 1.5rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .eco-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .eco-icon{
+      font-size:3rem;
+      margin-bottom:1.5rem;
+      color:var(--primary-medium);
+    }
+
+    /* Partners */
+    .partners {
+      background-color: var(--gray-light);
+    }
+    .partner-logos{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:2rem;
+      margin-top:2rem;
+    }
+    .partner-logo{
+      background-color:white;
+      padding:1.5rem 2rem;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      min-width:150px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Gallery */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+      gap:15px;
+    }
+    .gallery-item{
+      height:220px;
+      border-radius:10px;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      overflow:hidden;
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    .gallery-item:hover{
+      transform:scale(1.05);
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1400;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: var(--transition);
+    }
+    .lightbox-close:hover {
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer{
+      background:var(--primary-dark);
+      color:var(--text-light);
+      padding:60px 0 30px;
+    }
+    .footer-content{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+      margin-bottom:2rem;
+    }
+    .footer-section h3{
+      color:var(--accent);
+      margin-bottom:1.5rem;
+      font-size: 1.3rem;
+    }
+    .footer-section p{
+      margin-bottom:0.8rem;
+    }
+    .social-links{
+      display:flex;
+      gap:1rem;
+      margin-top:1.5rem;
+    }
+    .social-icon{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.1);
+      transition:var(--transition);
+      font-size: 1.2rem;
+    }
+    .social-icon:hover{
+      background:var(--accent);
+      color:var(--text-dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align:center;
+      margin-top:2rem;
+      padding-top:2rem;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Back to top */
+    .back-to-top{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:var(--accent);
+      color:var(--text-dark);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transition:var(--transition);
+      z-index:1300;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+    .back-to-top:hover {
+      background: var(--accent-light);
+      transform: translateY(-3px);
+    }
+    .back-to-top.show{
+      opacity:1;
+      visibility:visible;
+    }
+
+    /* Fade-in */
+    .fade-in{
+      opacity:0;
+      transform:translateY(30px);
+      transition:opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.appear{
+      opacity:1;
+      transform:none;
+    }
+
+    /* Stats Counter */
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+      gap: 1.5rem;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    /* Enhanced Mobile Responsiveness */
+    @media (max-width: 1200px) {
+      .container {
+        width: 95%;
+      }
+    }
+
+    @media (max-width: 992px){
+      .about-content{grid-template-columns:1fr}
+      .hero h1{font-size:2.8rem}
+      .race-detail-grid{grid-template-columns:1fr}
+      .highlight-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width:768px){
+      :root{--header-height:75px} /* Slightly increased for mobile */
+      body{padding-top:var(--header-height)}
+      .logo img{height:55px;max-height:55px} /* Adjusted for mobile */
+      .hamburger{display:flex}
+      .nav-links{
+        position:fixed;
+        top:var(--header-height);
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        align-items:center;
+        padding:2rem 0;
+        gap:1.5rem;
+        box-shadow:var(--shadow);
+        transform:translateY(-100%);
+        opacity:0;
+        pointer-events:none;
+        transition:var(--transition);
+        z-index:1199;
+      }
+      .nav-links.active{
+        transform:translateY(0);
+        opacity:1;
+        pointer-events:auto;
+      }
+      .nav-links li{margin:0}
+      .race-tabs{flex-direction:column}
+      .hero h1{font-size:2.2rem}
+      .section-title h2{font-size:1.8rem}
+      section {
+        padding: 60px 0;
+      }
+      .hero {
+        padding: 30px 15px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width:576px){
+      .highlight-img{height:180px}
+      .gallery-item{height:160px}
+      .hero h1{font-size:1.8rem}
+      .hero p{font-size:0.95rem}
+      .stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .container {
+        width: 92%;
+      }
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      .race-tab {
+        padding: 12px 20px;
+        min-width: 130px;
+      }
+      .bank-info {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .hero p {
+        font-size: 0.9rem;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      }
+    }
+
+    /* Prevent horizontal scroll on mobile */
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Touch-friendly improvements */
+    @media (hover: none) {
+      .btn:hover, 
+      .highlight-card:hover, 
+      .eco-item:hover, 
+      .partner-logo:hover,
+      .gallery-item:hover,
+      .race-map:hover {
+        transform: none;
+      }
+      
+      .nav-links li a:hover::after {
+        width: 0;
+      }
+    }
+
+    /* Improved focus states for accessibility */
+    .btn:focus,
+    .race-tab:focus,
+    .social-icon:focus,
+    .back-to-top:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="#home" class="logo">
+          <img src="logo.png" alt="Wawgant Toubkal Trail Logo" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#races">Races</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" aria-label="Open menu" role="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content container">
+      <h1>Wawgant Toubkal Trail 2026</h1>
+      <p>15–17 May 2026 — Imlil, Morocco</p>
+      <p>Join the adventure at the heart of the High Atlas.</p>
+      <a href="#registration" class="btn">Register Now</a>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="introduction fade-in">
+    <div class="container">
+      <div class="section-title"><h2>About the Event</h2></div>
+      <p>The Wawgant Toubkal Trail (WTT) is an international mountain running event in the High Atlas Mountains. Organized by the Tougr Ikkaln Association for Mountain Sports and Local Development, it combines athletic challenge, cultural immersion, and respect for nature.</p>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number" data-count="3">0</div>
+          <div class="stat-label">Days of Adventure</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="700">0</div>
+          <div class="stat-label">Expected Participants</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="3">0</div>
+          <div class="stat-label">Race Distances</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="3500">0</div>
+          <div class="stat-label">Max Elevation (m)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="highlights fade-in">
+    <div class="container">
+      <div class="section-title"><h2>Event Highlights</h2></div>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <div class="highlight-img" style="background-image:url('test.jpeg')"></div>
+          <div class="highlight-content">
+            <h3>Pure Challenge</h3>
+            <p>Test your endurance in the High Atlas mountains with challenging trails and breathtaking elevation gains.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-img" style="background-image:url('views.jpeg')"></div>
+          <div class="highlight-content">
+            <h3>Unforgettable Views</h3>
+            <p>Discover breathtaking landscapes as you traverse valleys, waterfalls, and summit paths.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-img" style="background-image:url('culture.jpeg')"></div>
+          <div class="highlight-content">
+            <h3>Cultural Experience</h3>
+            <p>Where sport meets tradition - immerse yourself in the rich Amazigh culture of the High Atlas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about fade-in">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>What is the Wawgant Toubkal Trail?</h2>
+        <p>The WTT is more than a race — it's a human adventure. Over three days, runners from Morocco and abroad gather in Imlil to explore trails that cross valleys, waterfalls, and summit paths.</p>
+        <p>With distances from 10 km to 42 km, every participant finds their own challenge. Experience the beauty of the High Atlas while pushing your limits in one of Morocco's most spectacular settings.</p>
+        <a href="#races" class="btn">View the Races</a>
+      </div>
+      <div class="about-img">
+        <img src="about.jpeg" alt="Trail running">
+      </div>
+    </div>
+  </section>
+
+  <!-- Race Details -->
+  <section class="race-details fade-in" id="races">
+    <div class="container">
+      <div class="section-title"><h2>Race Details</h2></div>
+      
+      <div class="race-tabs">
+        <div class="race-tab active" data-race="10km">
+          <i class="fas fa-hiking"></i> 10KM Fun Trail
+        </div>
+        <div class="race-tab" data-race="21km">
+          <i class="fas fa-mountain"></i> 21KM Goat Trail
+        </div>
+        <div class="race-tab" data-race="42km">
+          <i class="fas fa-medal"></i> 42KM Summit Challenge
+        </div>
+      </div>
+      
+      <!-- 10KM Race Details -->
+      <div class="race-content active" id="10km-details">
+        <div class="race-detail-grid">
+          <div class="race-info">
+            <h3>10KM Fun Trail</h3>
+            <p>A scenic trail perfect for beginners and those looking to enjoy the beautiful landscapes around Imlil without extreme elevation challenges.</p>
+            <ul>
+              <li><strong>Distance:</strong> 10 km</li>
+              <li><strong>Elevation Gain:</strong> +350 m</li>
+              <li><strong>Difficulty:</strong> Easy</li>
+              <li><strong>Start Time:</strong> 08:30</li>
+              <li><strong>Cut-off Time:</strong> 3 hours</li>
+              <li><strong>Aid Stations:</strong> 2 stations</li>
+              <li><strong>Registration Fee:</strong> 300 MAD</li>
+            </ul>
+            <a href="#registration" class="btn">Register for 10KM</a>
+          </div>
+          <div class="race-map">
+            <img src="wtt10.jpeg" alt="10KM Route Map">
+          </div>
+        </div>
+      </div>
+      
+      <!-- 21KM Race Details -->
+      <div class="race-content" id="21km-details">
+        <div class="race-detail-grid">
+          <div class="race-info">
+            <h3>21KM Goat Trail</h3>
+            <p>A challenging intermediate trail that takes you through traditional Berber villages and scenic mountain paths with rewarding views.</p>
+            <ul>
+              <li><strong>Distance:</strong> 21 km</li>
+              <li><strong>Elevation Gain:</strong> +1130 m</li>
+              <li><strong>Difficulty:</strong> Moderate</li>
+              <li><strong>Start Time:</strong> 07:00</li>
+              <li><strong>Cut-off Time:</strong> 5 hours</li>
+              <li><strong>Aid Stations:</strong> 3 stations</li>
+              <li><strong>Registration Fee:</strong> 450 MAD</li>
+            </ul>
+            <a href="#registration" class="btn">Register for 21KM</a>
+          </div>
+          <div class="race-map">
+            <img src="wtt21.jpeg" alt="21KM Route Map">
+          </div>
+        </div>
+      </div>
+      
+      <!-- 42KM Race Details -->
+      <div class="race-content" id="42km-details">
+        <div class="race-detail-grid">
+          <div class="race-info">
+            <h3>42KM Summit Challenge</h3>
+            <p>The ultimate challenge for experienced trail runners, taking you to higher elevations with breathtaking panoramic views of the High Atlas.</p>
+            <ul>
+              <li><strong>Distance:</strong> 42 km</li>
+              <li><strong>Elevation Gain:</strong> +2100 m</li>
+              <li><strong>Difficulty:</strong> Hard</li>
+              <li><strong>Start Time:</strong> 06:00</li>
+              <li><strong>Cut-off Time:</strong> 8 hours</li>
+              <li><strong>Aid Stations:</strong> 5 stations</li>
+              <li><strong>Registration Fee:</strong> 600 MAD</li>
+            </ul>
+            <a href="#registration" class="btn">Register for 42KM</a>
+          </div>
+          <div class="race-map">
+            <img src="wtt42.jpeg" alt="42KM Route Map">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Preview -->
+  <section class="registration-preview fade-in" id="registration">
+    <div class="container">
+      <div class="section-title"><h2>Registration</h2></div>
+      <p>Register online and confirm your participation by bank transfer. Receive confirmation within 24 hours.</p>
+      <div class="bank-info">
+        <h3><i class="fas fa-university"></i> Bank Information</h3>
+        <p><strong>Bank:</strong> Attijariwafa Bank</p>
+        <p><strong>Account Name:</strong> Wawgant Trail Association</p>
+        <p><strong>RIB:</strong> 007 810 000000000000 96</p>
+        <p>Send payment proof to:</p>
+        <p><i class="fas fa-envelope"></i> registration@wawganttrail.ma</p>
+        <p><i class="fab fa-whatsapp"></i> +212 6XX XXX XXX</p>
+      </div>
+      <div style="text-align:center; margin-top: 2rem;">
+        <a href="#contact" class="btn">Contact Us for Registration</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eco -->
+  <section class="eco fade-in">
+    <div class="container">
+      <div class="section-title"><h2>Eco & Community</h2></div>
+      <p>Wawgant Trail promotes eco-friendly sports and supports the local High Atlas communities through youth training and sustainable development.</p>
+      <div class="eco-grid">
+        <div class="eco-item">
+          <div class="eco-icon">🏞️</div>
+          <h3>Zero-plastic policy</h3>
+          <p>We're committed to reducing plastic waste during the event with reusable hydration systems.</p>
+        </div>
+        <div class="eco-item">
+          <div class="eco-icon">♻️</div>
+          <h3>Local volunteer programs</h3>
+          <p>Engaging local communities in event organization and trail maintenance.</p>
+        </div>
+        <div class="eco-item">
+          <div class="eco-icon">🧒</div>
+          <h3>Support for rural youth</h3>
+          <p>Investing in the next generation through sports initiatives and education programs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="partners fade-in">
+    <div class="container">
+      <div class="section-title"><h2>Partners & Sponsors</h2></div>
+      <p>We're proud to collaborate with these organizations that share our vision for mountain sports and sustainable tourism.</p>
+      <div class="partner-logos">
+        <div class="partner-logo">Partner 1</div>
+        <div class="partner-logo">Partner 2</div>
+        <div class="partner-logo">Partner 3</div>
+        <div class="partner-logo">Partner 4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery-preview fade-in" id="gallery">
+    <div class="container">
+      <div class="section-title"><h2>Gallery</h2></div>
+      <p>Take a look at moments from previous editions of Wawgant Toubkal Trail.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="background-image:url('gal1.jpeg')" data-image="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal2.jpeg')" data-image="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal3.jpeg')" data-image="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal4.jpeg')" data-image="https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal5.jpeg')" data-image="https://images.unsplash.com/photo-1518638150340-f706e86654de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal6.jpeg')" data-image="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal7.jpeg')" data-image="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+        <div class="gallery-item" style="background-image:url('gal8.jpeg')" data-image="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="Gallery Image">
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Imlil, El Haouz, Marrakesh, Morocco</p>
+          <p><i class="fas fa-envelope"></i> contact@wawganttrail.ma</p>
+          <p><i class="fas fa-phone"></i> +212 6XX XXX XXX</p>
+          <p><i class="fab fa-whatsapp"></i> +212 6XX XXX XXX</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="#home">Home</a></p>
+          <p><a href="#races">Races</a></p>
+          <p><a href="#registration">Registration</a></p>
+          <p><a href="#gallery">Gallery</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wawgant Trail – All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <div class="back-to-top" aria-hidden="true"><i class="fas fa-chevron-up"></i></div>
+
+  <script>
+    // Elements
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const backToTopButton = document.querySelector('.back-to-top');
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const raceTabs = document.querySelectorAll('.race-tab');
+    const raceContents = document.querySelectorAll('.race-content');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const statNumbers = document.querySelectorAll('.stat-number');
+
+    // Mobile Nav Toggle
+    if(hamburger){
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // Back to Top button show/hide
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+
+      // Fade-in logic
+      fadeElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) {
+          element.classList.add('appear');
+        }
+      });
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+
+    // Race Tabs functionality
+    raceTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        raceTabs.forEach(t => t.classList.remove('active'));
+        raceContents.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Show corresponding content
+        const raceId = tab.getAttribute('data-race');
+        document.getElementById(`${raceId}-details`).classList.add('active');
+      });
+    });
+
+    // Gallery Lightbox
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const imageUrl = item.getAttribute('data-image');
+        lightboxImage.src = imageUrl;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Animated counter for stats
+    function animateCounter() {
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = Math.floor(current);
+        }, 16);
+      });
+    }
+
+    // Initialize counters when stats section is in view
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-item').forEach(item => {
+      statsObserver.observe(item);
+    });
+
+    // Initial run for elements already in viewport
+    document.addEventListener('DOMContentLoaded', () => {
+      fadeElements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) element.classList.add('appear');
+      });
+    });
+
+    // Prevent body scroll when mobile menu is open
+    hamburger.addEventListener('click', () => {
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+</body>
+</html>
