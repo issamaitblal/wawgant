@@ -26,7 +26,7 @@
       --shadow: 0 4px 6px rgba(0,0,0,0.1);
       --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
       --transition: all 0.3s ease;
-      --header-height: 85px; /* Increased for larger logo */
+      --header-height: 85px;
     }
 
     /* Base */
@@ -101,7 +101,7 @@
     }
     /* Larger logo */
     .logo img{
-      height:70px; /* Increased from 64px */
+      height:70px;
       width:auto;
       max-height:70px;
       object-fit:contain;
@@ -167,37 +167,78 @@
       transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* Hero */
+    /* Hero with Slideshow */
     .hero{
       min-height: calc(100vh - var(--header-height));
-      background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-      background-size:cover;
-      background-position:center;
+      position: relative;
       display:flex;
       align-items:center;
       justify-content:center;
       color:var(--text-light);
       text-align:center;
       padding:40px 15px;
-      position: relative;
+      overflow: hidden;
     }
+    
+    .slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .slide::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    }
+    
     .hero-content {
       max-width: 800px;
       z-index: 2;
       position: relative;
     }
+    
     .hero h1{
       font-size:3.5rem;
       margin-bottom:0.6rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      animation: fadeInUp 1s ease;
     }
+    
     .hero p{
       font-size:1.2rem;
       margin-bottom:1.5rem;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+      animation: fadeInUp 1s ease 0.2s both;
     }
+    
+    .hero .btn {
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+    
     .hero::after {
       content: '';
       position: absolute;
@@ -206,6 +247,74 @@
       width: 100%;
       height: 100px;
       background: linear-gradient(transparent, var(--gray-light));
+      z-index: 2;
+    }
+    
+    /* Slideshow Controls */
+    .slideshow-controls {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 3;
+    }
+    
+    .slideshow-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .slideshow-dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+    
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.3);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+    
+    .slideshow-nav:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    
+    .slideshow-prev {
+      left: 20px;
+    }
+    
+    .slideshow-next {
+      right: 20px;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Sections */
@@ -658,9 +767,9 @@
     }
 
     @media (max-width:768px){
-      :root{--header-height:75px} /* Slightly increased for mobile */
+      :root{--header-height:75px}
       body{padding-top:var(--header-height)}
-      .logo img{height:55px;max-height:55px} /* Adjusted for mobile */
+      .logo img{height:55px;max-height:55px}
       .hamburger{display:flex}
       .nav-links{
         position:fixed;
@@ -700,6 +809,17 @@
       .hero p {
         font-size: 1.1rem;
       }
+      .slideshow-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+      .slideshow-prev {
+        left: 10px;
+      }
+      .slideshow-next {
+        right: 10px;
+      }
     }
 
     @media (max-width:576px){
@@ -723,6 +843,9 @@
       }
       .bank-info {
         padding: 1.5rem;
+      }
+      .slideshow-nav {
+        display: none; /* Hide arrows on very small screens */
       }
     }
 
@@ -803,8 +926,31 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero with Slideshow -->
   <section class="hero" id="home">
+    <div class="slideshow">
+      <div class="slide active" style="background-image: url('cv.jpeg')"></div>
+      <div class="slide" style="background-image: url('cvr1.jpg')"></div>
+      <div class="slide" style="background-image: url('cvr2.jpg')"></div>
+      <div class="slide" style="background-image: url('cvr3.jpg')"></div>
+      <div class="slide" style="background-image: url('cvr.jpg')"></div>
+    </div>
+    
+    <button class="slideshow-nav slideshow-prev" aria-label="Previous image">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="slideshow-nav slideshow-next" aria-label="Next image">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <div class="slideshow-controls">
+      <div class="slideshow-dot active" data-slide="0"></div>
+      <div class="slideshow-dot" data-slide="1"></div>
+      <div class="slideshow-dot" data-slide="2"></div>
+      <div class="slideshow-dot" data-slide="3"></div>
+      <div class="slideshow-dot" data-slide="4"></div>
+    </div>
+
     <div class="hero-content container">
       <h1>Wawgant Toubkal Trail 2026</h1>
       <p>15–17 May 2026 — Imlil, Morocco</p>
@@ -1106,6 +1252,73 @@
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxClose = document.querySelector('.lightbox-close');
     const statNumbers = document.querySelectorAll('.stat-number');
+
+    // Slideshow functionality
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slideshow-dot');
+    const prevButton = document.querySelector('.slideshow-prev');
+    const nextButton = document.querySelector('.slideshow-next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(n) {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Calculate the new slide index
+      currentSlide = (n + slides.length) % slides.length;
+      
+      // Add active class to current slide and dot
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startSlideshow() {
+      slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopSlideshow() {
+      clearInterval(slideInterval);
+    }
+
+    // Initialize slideshow
+    startSlideshow();
+
+    // Event listeners for slideshow controls
+    prevButton.addEventListener('click', () => {
+      stopSlideshow();
+      prevSlide();
+      startSlideshow();
+    });
+
+    nextButton.addEventListener('click', () => {
+      stopSlideshow();
+      nextSlide();
+      startSlideshow();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'));
+        stopSlideshow();
+        showSlide(slideIndex);
+        startSlideshow();
+      });
+    });
+
+    // Pause slideshow when hovering over it
+    const slideshow = document.querySelector('.slideshow');
+    slideshow.addEventListener('mouseenter', stopSlideshow);
+    slideshow.addEventListener('mouseleave', startSlideshow);
 
     // Mobile Nav Toggle
     if(hamburger){
